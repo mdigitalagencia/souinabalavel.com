@@ -7,11 +7,19 @@
     var utm_content = new URL(document.location).searchParams.get("utm_content");
     var utm_medium = new URL(document.location).searchParams.get("utm_medium");
 
+    if (utm_source == null) utm_source = "LP_15";
+    if (utm_campaign == null) utm_campaign = "YOUTUBE_LIVE";
+    if (utm_content == null) utm_content = "LINK";
+    if (utm_medium == null) utm_medium = "BROWSER";
+   
+
     function redirect() {
         let htmt_pid = "M48191063D";
         let htmt_off = "e5g9ifhf";
         location.href = "https://pay.hotmart.com/" + htmt_pid + "?off=" + htmt_off + "&checkoutMode=10&utm_source="+utm_source+"&utm_campaign="+utm_campaign+"&utm_medium="+utm_medium+"&utm_content="+utm_content+"&sck="+utm_source+"-"+utm_campaign+"-"+utm_medium+"-"+utm_content;
     }
+
+    redirect();
 
 </script>
 </html>
